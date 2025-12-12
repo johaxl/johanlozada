@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Portafolio - Johan Lozada</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <style>
         :root {
             --bg: #050816;
@@ -187,6 +188,8 @@
             border-radius: 8px;
             font-size: 0.75rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-right: 4px;
+            display: inline-block;
         }
 
         /* CONTACTO */
@@ -196,6 +199,45 @@
             border-radius: 1rem;
             border: 1px solid rgba(99, 102, 241, 0.5);
             margin-top: 2rem;
+        }
+
+        /* DEDICATORIA */
+        .dedicatoria {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-radius: 1.2rem;
+            background: linear-gradient(135deg,
+                    rgba(99, 102, 241, 0.15),
+                    rgba(168, 85, 247, 0.12));
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .dedicatoria h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .dedicatoria h2 span {
+            background: linear-gradient(45deg, #a855f7, #6366f1, #22c55e);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .dedicatoria p {
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .dedicatoria .firma {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            font-style: italic;
         }
 
         footer {
@@ -273,43 +315,43 @@
                 <div class="project-card">
                     <h3>Monitoreo de Suelos con IoT y Docker</h3>
                     <p>App móvil + backend para medir humedad y calidad del suelo.</p>
-                    <div class="tag">Flutter</div>
-                    <div class="tag">Docker</div>
-                    <div class="tag">IoT</div>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">IoT</span>
                 </div>
 
                 <div class="project-card">
                     <h3>SIG Triangulación Piloto</h3>
                     <p>Registro, edición y graficación de rutas y triangulación.</p>
-                    <div class="tag">Laravel</div>
-                    <div class="tag">Mapas</div>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Mapas</span>
                 </div>
 
                 <div class="project-card">
                     <h3>Sistema Legal Django</h3>
                     <p>Gestión de clientes, abogados y casos jurídicos.</p>
-                    <div class="tag">Django</div>
-                    <div class="tag">SQLite</div>
+                    <span class="tag">Django</span>
+                    <span class="tag">SQLite</span>
                 </div>
 
                 <div class="project-card">
                     <h3>Gestor de Deportistas</h3>
                     <p>Relaciones entre países, deportistas y disciplinas.</p>
-                    <div class="tag">Laravel</div>
-                    <div class="tag">MySQL</div>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
                 </div>
 
                 <div class="project-card">
                     <h3>BI y Data Mining</h3>
                     <p>Naive Bayes, regresión, ETL, modelo estrella.</p>
-                    <div class="tag">Python</div>
-                    <div class="tag">Pentaho</div>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pentaho</span>
                 </div>
 
                 <div class="project-card">
                     <h3>Robótica UTC / Taita Robot</h3>
                     <p>Participación en competencias de robots en Guano.</p>
-                    <div class="tag">Arduino</div>
+                    <span class="tag">Arduino</span>
                 </div>
 
             </div>
@@ -320,16 +362,24 @@
             <h2 class="section-title">Contacto</h2>
 
             <div class="contact-card">
-                <p>
-                    ¿Tienes una idea o proyecto?
-                    Escríbeme y lo construimos juntos.
-                </p>
-
+                <p>¿Tienes una idea o proyecto? Escríbeme y lo construimos juntos.</p>
                 <p><strong>Correo:</strong> johan.lozada5793@utc.edu.ec</p>
                 <p><strong>GitHub:</strong> github.com/johaxl</p>
                 <p><strong>Ubicación:</strong> Latacunga, Ecuador</p>
                 <p><strong>Celular:</strong> 0979083083</p>
             </div>
+        </section>
+
+        <!-- DEDICATORIA -->
+        <section class="dedicatoria">
+            <h2>Dedicatoria para <span>Jomara</span></h2>
+            <p>
+                Este portafolio no solo representa líneas de código, proyectos y esfuerzo académico,
+                sino también el apoyo, la motivación y la inspiración que he recibido en el camino.
+                Gracias, Jomara, por creer en mí incluso en los momentos difíciles, por tu paciencia
+                y por recordarme que cada meta vale la pena cuando se construye con constancia y corazón.
+            </p>
+            <div class="firma">— Con cariño y gratitud, Johan</div>
         </section>
 
     </main>
@@ -339,8 +389,8 @@
         <img src="img/utc.jpg" alt="Logo UTC">
         <br>
         ©
-        <script>document.write(new Date().getFullYear());</script> Johan Lozada — Portafolio hecho con café, código y
-        robots 
+        <script>document.write(new Date().getFullYear());</script>
+        Johan Lozada — Portafolio hecho con café, código y robots
     </footer>
 
 </body>
