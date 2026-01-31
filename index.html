@@ -9,16 +9,11 @@
     <style>
         :root {
             --bg: #050816;
-            --bg-soft: #0b1020;
             --card: #0f172a;
             --accent: #6366f1;
-            --accent-soft: rgba(99, 102, 241, 0.1);
             --text: #e5e7eb;
             --muted: #9ca3af;
             --border: rgba(148, 163, 184, 0.3);
-            --radius-xl: 1.2rem;
-            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
-            --shadow-chip: 0 8px 24px rgba(15, 23, 42, 0.6);
         }
 
         * {
@@ -28,15 +23,10 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+            font-family: system-ui, sans-serif;
+            background: radial-gradient(circle at top, #111827, #020617 60%, #000);
             color: var(--text);
             line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
         }
 
         img {
@@ -44,23 +34,29 @@
             display: block;
         }
 
-        /* NAVBAR */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         header {
             position: sticky;
             top: 0;
-            z-index: 50;
-            backdrop-filter: blur(18px);
             background: rgba(15, 23, 42, 0.9);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
         }
 
         .nav {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 0.9rem 1.25rem;
+            margin: auto;
+            padding: 1rem;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
         }
 
         .nav-left {
@@ -70,19 +66,12 @@
         }
 
         .nav-left img {
-            height: 45px;
+            height: 42px;
             border-radius: 6px;
-        }
-
-        .nav-title {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
         }
 
         .nav-title span:first-child {
             font-weight: 600;
-            font-size: 1rem;
         }
 
         .nav-title span:last-child {
@@ -92,40 +81,35 @@
 
         .nav-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: white;
+            flex-wrap: wrap;
         }
 
         .nav-cta {
-            padding: 0.45rem 0.9rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 999px;
             background: linear-gradient(45deg, #6366f1, #a855f7);
-            color: white;
             font-size: 0.8rem;
             font-weight: 600;
         }
 
-        /* HERO */
         main {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: auto;
             padding: 1.5rem;
         }
 
         .hero {
             display: grid;
-            grid-template-columns: 1.6fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
             gap: 2rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .hero h1 {
-            font-size: 2.7rem;
-            line-height: 1.1;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
         }
 
         .hero span {
@@ -134,35 +118,26 @@
             color: transparent;
         }
 
-        .hero p {
-            margin: 1rem 0;
-            font-size: 1rem;
-            color: #cbd5f5;
-        }
-
-        /* FOTO DE PERFIL */
         .profile-card {
-            background: #0f172a;
-            border: 1px solid rgba(148, 163, 184, 0.4);
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 1.2rem;
             padding: 1.5rem;
             text-align: center;
-            box-shadow: var(--shadow-soft);
         }
 
         .avatar img {
             width: 120px;
             height: 120px;
-            border-radius: 999px;
-            object-fit: cover;
+            border-radius: 50%;
             border: 3px solid #6366f1;
-            margin: 0 auto 1rem;
+            margin: auto auto 1rem;
+            object-fit: cover;
         }
 
-        /* PROYECTOS */
         .section-title {
-            font-size: 1.7rem;
-            margin: 2.5rem 0 1rem;
+            font-size: 1.6rem;
+            margin: 3rem 0 1.2rem;
         }
 
         .projects-grid {
@@ -172,51 +147,36 @@
         }
 
         .project-card {
-            background: #0f172a;
-            border: 1px solid rgba(148, 163, 184, 0.4);
+            background: var(--card);
+            border: 1px solid var(--border);
             padding: 1rem;
             border-radius: 1rem;
         }
 
-        .project-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
         .tag {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 3px 8px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-right: 4px;
             display: inline-block;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            margin: 4px 4px 0 0;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* CONTACTO */
         .contact-card {
-            background: rgba(37, 99, 235, 0.14);
+            background: rgba(99, 102, 241, 0.15);
             padding: 1.5rem;
             border-radius: 1rem;
-            border: 1px solid rgba(99, 102, 241, 0.5);
-            margin-top: 2rem;
+            border: 1px solid rgba(99, 102, 241, 0.4);
         }
 
-        /* DEDICATORIA */
         .dedicatoria {
-            margin-top: 3rem;
-            padding: 2rem;
-            border-radius: 1.2rem;
-            background: linear-gradient(135deg,
-                    rgba(99, 102, 241, 0.15),
-                    rgba(168, 85, 247, 0.12));
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            margin-top: 3.5rem;
+            padding: 2.2rem;
             text-align: center;
-        }
-
-        .dedicatoria h2 {
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            border-radius: 1.2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(168, 85, 247, 0.4);
         }
 
         .dedicatoria h2 span {
@@ -226,37 +186,30 @@
         }
 
         .dedicatoria p {
-            font-size: 0.95rem;
-            color: #e5e7eb;
-            max-width: 750px;
-            margin: 0 auto;
-            line-height: 1.7;
+            max-width: 760px;
+            margin: auto;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        .dedicatoria .firma {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: #9ca3af;
+        .firma {
+            margin-top: 1.2rem;
             font-style: italic;
+            color: var(--muted);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 2.5rem;
             color: var(--muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 3rem;
         }
 
-        footer img {
-            height: 60px;
-            margin-bottom: 10px;
-        }
-
-        /* RESPONSIVE */
         @media (max-width: 900px) {
             .hero {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
         }
     </style>
@@ -264,17 +217,15 @@
 
 <body>
 
-    <!-- NAV -->
     <header>
         <nav class="nav">
             <div class="nav-left">
-                <img src="img/carrera.jpeg" alt="Logo Carrera">
+                <img src="img/carrera.jpeg" alt="UTC">
                 <div class="nav-title">
                     <span>Ingeniería en Sistemas</span>
                     <span>Universidad Técnica de Cotopaxi</span>
                 </div>
             </div>
-
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#proyectos">Proyectos</a>
@@ -286,111 +237,99 @@
 
     <main>
 
-        <!-- HERO -->
         <section id="inicio" class="hero">
             <div>
                 <h1>Hola, soy <span>Johan Lozada</span></h1>
                 <p>
-                    Desarrollador Jr con experiencia en Django, Laravel, Flutter, SIG,
-                    BI, modelos predictivos y robótica.
-                    Estudiante de Ingeniería en Sistemas en la UTC.
+                    Desarrollador Jr apasionado por crear soluciones reales con tecnología.
+                    He trabajado en sistemas web, móviles, SIG, BI, robótica y modelos predictivos,
+                    siempre buscando aprender y mejorar.
                 </p>
             </div>
 
             <div class="profile-card">
                 <div class="avatar">
-                    <img src="img/yo.jpeg" alt="Foto de Johan">
+                    <img src="img/yo.jpeg" alt="Johan">
                 </div>
                 <h3>Johan Javier Lozada Moreta</h3>
-                <p style="color:#9ca3af;">Desarrollador • Robótica • SIG • BI</p>
+                <p style="color:#9ca3af;">Desarrollador • SIG • BI • Robótica</p>
             </div>
         </section>
 
-        <!-- PROYECTOS -->
         <section id="proyectos">
             <h2 class="section-title">Proyectos destacados</h2>
 
             <div class="projects-grid">
 
                 <div class="project-card">
-                    <h3>Monitoreo de Suelos con IoT y Docker</h3>
-                    <p>App móvil + backend para medir humedad y calidad del suelo.</p>
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">IoT</span>
+                    <h3>Sistema Bancario</h3>
+                    <p>Backend con Spring Boot, PostgreSQL y despliegue en Linux.</p>
+                    <span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span>
                 </div>
 
                 <div class="project-card">
                     <h3>SIG Triangulación Piloto</h3>
-                    <p>Registro, edición y graficación de rutas y triangulación.</p>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">Mapas</span>
+                    <p>Registro y graficación de rutas con mapas interactivos.</p>
+                    <span class="tag">Laravel</span><span class="tag">SIG</span>
                 </div>
 
                 <div class="project-card">
-                    <h3>Sistema Legal Django</h3>
-                    <p>Gestión de clientes, abogados y casos jurídicos.</p>
-                    <span class="tag">Django</span>
-                    <span class="tag">SQLite</span>
+                    <h3>Business Intelligence</h3>
+                    <p>Dashboards en Power BI y procesos ETL con Pentaho.</p>
+                    <span class="tag">Power BI</span><span class="tag">Pentaho</span>
                 </div>
 
                 <div class="project-card">
-                    <h3>Gestor de Deportistas</h3>
-                    <p>Relaciones entre países, deportistas y disciplinas.</p>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">MySQL</span>
+                    <h3>Machine Learning</h3>
+                    <p>Modelos predictivos con SVM y Naive Bayes.</p>
+                    <span class="tag">Python</span><span class="tag">ML</span>
                 </div>
 
                 <div class="project-card">
-                    <h3>BI y Data Mining</h3>
-                    <p>Naive Bayes, regresión, ETL, modelo estrella.</p>
-                    <span class="tag">Python</span>
-                    <span class="tag">Pentaho</span>
+                    <h3>Web Forms ASP.NET</h3>
+                    <p>Sistema CRUD académico con SQL Server.</p>
+                    <span class="tag">ASP.NET</span><span class="tag">C#</span>
                 </div>
 
                 <div class="project-card">
-                    <h3>Robótica UTC / Taita Robot</h3>
-                    <p>Participación en competencias de robots en Guano.</p>
+                    <h3>Robótica UTC</h3>
+                    <p>Diseño y programación de robots para competencias.</p>
                     <span class="tag">Arduino</span>
                 </div>
 
             </div>
         </section>
 
-        <!-- CONTACTO -->
         <section id="contacto">
             <h2 class="section-title">Contacto</h2>
-
             <div class="contact-card">
-                <p>¿Tienes una idea o proyecto? Escríbeme y lo construimos juntos.</p>
-                <p><strong>Correo:</strong> johan.lozada5793@utc.edu.ec</p>
+                <p><strong>Email:</strong> johan.lozada5793@utc.edu.ec</p>
                 <p><strong>GitHub:</strong> github.com/johaxl</p>
                 <p><strong>Ubicación:</strong> Latacunga, Ecuador</p>
                 <p><strong>Celular:</strong> 0979083083</p>
             </div>
         </section>
 
-        <!-- DEDICATORIA -->
         <section class="dedicatoria">
-            <h2>Dedicatoria para <span>Jomara</span></h2>
+            <h2>Dedicatoria para <span>Nicole</span></h2>
             <p>
-                Este portafolio no solo representa líneas de código, proyectos y esfuerzo académico,
-                sino también el apoyo, la motivación y la inspiración que he recibido en el camino.
-                Gracias, Jomara, por creer en mí incluso en los momentos difíciles, por tu paciencia
-                y por recordarme que cada meta vale la pena cuando se construye con constancia y corazón.
+                Este portafolio no solo representa líneas de código y proyectos,
+                también refleja el apoyo, la paciencia y el cariño que me has dado
+                en cada etapa de mi camino.
+                Gracias por creer en mí incluso cuando yo dudaba,
+                por acompañarme en mis desvelos y por ser mi motivación diaria.
+                Todo lo que hago, lo hago con amor… y tú eres una parte muy importante de ello.
+                Te amo 🤍
             </p>
-            <div class="firma">— Con cariño y gratitud, Johan</div>
+            <div class="firma">— Con todo mi amor, Johan</div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <img src="img/utc.jpg" alt="Logo UTC">
-        <br>
         ©
         <script>document.write(new Date().getFullYear());</script>
-        Johan Lozada — Portafolio hecho con café, código y robots
+        Johan Lozada — Hecho con código, esfuerzo y corazón
     </footer>
 
 </body>
